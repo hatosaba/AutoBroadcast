@@ -3,18 +3,14 @@ package si.f5.hatosaba.autobroadcast.bungee.listener;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.md_5.bungee.api.event.PluginMessageEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
-import org.bukkit.ChatColor;
 import org.json.JSONObject;
 import si.f5.hatosaba.autobroadcast.Channels;
 import si.f5.hatosaba.autobroadcast.bungee.AutoBroadcast;
-
 
 public class RequestReceiveListener implements Listener {
 
@@ -34,7 +30,7 @@ public class RequestReceiveListener implements Listener {
         if(isJsonMessage(message)) {
             component = GsonComponentSerializer.gson().deserialize(message);
         }else {
-            component = LegacyComponentSerializer.legacy('&').deserialize(message);
+            component = LegacyComponentSerializer.legacyAmpersand().deserialize(message);
         }
 
         plugin.getProxy().getPlayers().forEach((player) -> plugin.adventure().sender(player).sendMessage(component));

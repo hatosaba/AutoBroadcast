@@ -20,9 +20,7 @@ message-lists:
     time: '14:55'
     expiry: -1
     messages:
-      - 'ここにメッセージを書く'
-      - '次の時間になったら送信される'
-      - '次の次の時間になったら送信される( ´∀｀ )'
+      - "&cここにメッセージを書く \n改行もできるよん"
   json:
     enabled: true
     random: false
@@ -31,29 +29,55 @@ message-lists:
     messages:
       - |- #これが仕切り
         {
-          "text": "私の上にカーソルを置いて!",
-          "hoverEvent": {
-              "action": "show_text",
-              "value": [
-                {
-                  "text": "&3うわー、あなたは私の上にカーソル置いた!"
+          "color":"gold",
+          "extra":[
+            {
+              "bold":true,
+              "color":"aqua",
+              "text":"world"
+            },
+            {
+              "color":"red",
+              "text":"!"
+            },
+            {
+              "clickEvent":{
+                "action":"open_url",
+                "value":"https://hatosaba.f5.si/"
+              },
+              "text":"グーグルを開く"
+            },
+            {
+              "clickEvent":{
+                "action":"suggest_command",
+                "value":"/say aiueo"
+              },
+              "text":"コンプリートみたいなやつ"
+            },
+            {
+              "clickEvent":{
+                "action":"run_command",
+                "value":"/gamemode c"
+              },
+              "text":"コマンドを実行"
+            },
+            {
+              "clickEvent":{
+                "action":"copy_to_clipboard",
+                "value":"できないみたい"
+              },
+              "text":"クリックボードにコピー"
+            },
+            {
+              "hoverEvent":{
+                "action":"show_text",
+                "contents":{
+                  "color":"red",
+                  "text":"見ないで.."
                 }
-              ]
-          }
-        }
-      - |- #2個目
-        {
-          "text": "私をクリックしてコマンドを実行する!",
-          "clickEvent": {
-            "action": "run_command",
-            "value": "/say クリック！"
-          }
-        }
-      - |- #3個目
-        {
-          "text": "クリックしてGoogleを開く!",
-          "clickEvent": {
-            "action": "open_url",
-            "value": "http://google.com"
-          }
+              },
+              "text":"かざして"
+            }
+          ],
+          "text":"Hello "
         }
