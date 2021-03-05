@@ -1,0 +1,3 @@
+name: AutoBroadcast
+version: 1.0.0
+main: si.f5.hatosaba.autobroadcast.bungee.AutoBroadcast

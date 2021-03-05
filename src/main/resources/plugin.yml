@@ -1,0 +1,9 @@
+name: AutoBroadcast
+main: si.f5.hatosaba.autobroadcast.spigot.AutoBroadcast
+version: 1.0.0
+author: '@OiEii'
+
+commands:
+  autobroadcast:
+    permission: autobroadcast.reload
+    permission-message: 'You do not have permission'

@@ -1,0 +1,59 @@
+#regular:
+#  enabled: true #メッセージの送信するか
+#  random: false #ランダムに送信するか
+#  time: '14:55' #メッセージを送信する時間
+#  expiry: -1　 #ここは変更しないように
+#  messages:
+#    - 'ここにメッセージを書く'
+#    - '次に'
+
+#注意　インデントを絶対に合わせる
+
+settings:
+  enabled: true
+  min-players: 0
+  log-to-console: false
+message-lists:
+  regular:
+    enabled: true
+    random: false
+    time: '14:55'
+    expiry: -1
+    messages:
+      - 'ここにメッセージを書く'
+      - '次の時間になったら送信される'
+      - '次の次の時間になったら送信される( ´∀｀ )'
+  json:
+    enabled: true
+    random: false
+    time: '2:55'
+    expiry: -1
+    messages:
+      - |- #これが仕切り
+        {
+          "text": "私の上にカーソルを置いて!",
+          "hoverEvent": {
+              "action": "show_text",
+              "value": [
+                {
+                  "text": "&3うわー、あなたは私の上にカーソル置いた!"
+                }
+              ]
+          }
+        }
+      - |- #2個目
+        {
+          "text": "私をクリックしてコマンドを実行する!",
+          "clickEvent": {
+            "action": "run_command",
+            "value": "/say クリック！"
+          }
+        }
+      - |- #3個目
+        {
+          "text": "クリックしてGoogleを開く!",
+          "clickEvent": {
+            "action": "open_url",
+            "value": "http://google.com"
+          }
+        }
